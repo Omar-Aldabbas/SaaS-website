@@ -69,32 +69,32 @@
   --animate-fade-in-bottom-right-2-responsive: fade-in-bottom-right-2-responsive
     0.8s ease-out forwards;
 
-  /* Keyframes */
+  --animate-scroll-x: scroll-x 14s linear infinite;
 
-  /* Start far right (off-screen), end at top-left */
+
   @keyframes fade-in-top-left {
     from {
       opacity: 0;
-      transform: translate(-250%, -200%); /* way off to the right */
+      transform: translate(-250%, -200%); 
     }
     to {
       opacity: 1;
-      transform: translate(-550%, -210%) rotate(-25deg); /* land top-left */
+      transform: translate(-550%, -210%) rotate(-25deg);
     }
   }
 
   @keyframes fade-in-top-left-2 {
     from {
       opacity: 0;
-      transform: translate(-70%, -70%); /* way off to the right */
+      transform: translate(-70%, -70%); 
     }
     to {
       opacity: 1;
-      transform: translate(-80%, -210%); /* land top-left */
+      transform: translate(-80%, -210%);
     }
   }
 
-  /* Start far right (off-screen), end at top-right */
+
   @keyframes fade-in-top-right {
     from {
       opacity: 0;
@@ -106,7 +106,7 @@
     }
   }
 
-  /* Start far right (off-screen), end at bottom-left */
+
   @keyframes fade-in-bottom-left {
     from {
       opacity: 0;
@@ -114,11 +114,11 @@
     }
     to {
       opacity: 1;
-      transform: translate(-130%, 260%); /* land bottom-left */
+      transform: translate(-130%, 260%);
     }
   }
 
-  /* Start far right (off-screen), end at bottom-right */
+ 
   @keyframes fade-in-bottom-right {
     from {
       opacity: 0;
@@ -126,7 +126,7 @@
     }
     to {
       opacity: 1;
-      transform: translate(120%, 70%); /* land bottom-right */
+      transform: translate(120%, 70%);
     }
   }
   @keyframes fade-in-bottom-right-2 {
@@ -136,7 +136,7 @@
     }
     to {
       opacity: 1;
-      transform: translate(240%, 590%) rotate(35deg); /* land bottom-right */
+      transform: translate(240%, 590%) rotate(35deg); 
     }
   }
 
@@ -213,6 +213,15 @@
     to {
       opacity: 1;
       transform: translate(168%, 413%) rotate(24deg);
+    }
+  }
+
+  @keyframes scroll-x {
+    0% {
+      transform: translateX(0);
+    }
+    100% {
+      transform: translateX(-50%);
     }
   }
 }

@@ -33,8 +33,8 @@ export const HeroSection = () => {
           </p>
 
           <div className="flex gap-4 mt-4">
-            <button className="button-gr rounded-full">Try Free Trial</button>
-            <button className="button-no rounded-full font-thin flex items-center gap-2">
+            <button className="button-gr rounded-full py-4">Try Free Trial</button>
+            <button className="button-no rounded-full font-thin flex items-center gap-2 py-4">
               <PlayCircle size={24} /> View Demo
             </button>
           </div>
