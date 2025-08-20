@@ -1,0 +1,273 @@
+@import "tailwindcss";
+
+@import "tailwindcss";
+
+/* 
+1- theme
+   - Defined in `tailwind.config.js`
+   - Here we set the initial design system:
+     • Colors
+     • Spacing
+     • Fonts
+     • Utilities naming
+     • Transitions and keyframes
+
+2- layer
+   Tailwind has 3 layers where we can inject our own styles:
+   • base    → for global resets and base styles (html, body, :root, dark mode, etc.)
+   • components → for reusable styled components
+   • utilities → for custom utility classes (like `.btn`, `.card`)
+
+   Example:
+   @layer base { ... }
+   @layer components { ... }
+   @layer utilities { ... } we dont usually use this cuz its small changes we can do it by hand
+
+3- apply
+   - Lets us apply Tailwind utilities inside our own CSS classes.
+   - Example:
+     .btn {
+       @apply px-4 py-2 bg-blue-500 text-white rounded-lg;
+     }
+*/
+
+@theme {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+
+  --color-brand: var(--brand);
+  --color-black: var(--black);
+
+  --animate-gradient-shift: gradient-shift 10s ease infinite;
+
+  --animate-fade-in: fade-in 0.5s ease-in-out;
+
+  --animate-fade-in-top-left: fade-in-top-left 0.8s ease-out forwards;
+  --animate-fade-in-top-left-2: fade-in-top-left-2 0.8s ease-out forwards;
+  --animate-fade-in-top-right: fade-in-top-right 0.8s ease-out forwards;
+  --animate-fade-in-bottom-left: fade-in-bottom-left 0.8s ease-out forwards;
+  --animate-fade-in-bottom-right: fade-in-bottom-right 0.8s ease-out forwards;
+  --animate-fade-in-bottom-right-2: fade-in-bottom-right-2 0.8s ease-out
+    forwards;
+
+  --animate-fade-in-top-left-responsive: fade-in-top-left-responsive 0.8s
+    ease-out forwards;
+  --animate-fade-in-top-left-2-responsive: fade-in-top-left-2-responsive 0.8s
+    ease-out forwards;
+  --animate-fade-in-top-right-responsive: fade-in-top-right-responsive 0.8s
+    ease-out forwards;
+  --animate-fade-in-bottom-left-responsive: fade-in-bottom-left-responsive 0.8s
+    ease-out forwards;
+  --animate-fade-in-bottom-right-responsive: fade-in-bottom-right-responsive
+    0.8s ease-out forwards;
+  --animate-fade-in-bottom-right-2-responsive: fade-in-bottom-right-2-responsive
+    0.8s ease-out forwards;
+
+  /* Keyframes */
+
+  /* Start far right (off-screen), end at top-left */
+  @keyframes fade-in-top-left {
+    from {
+      opacity: 0;
+      transform: translate(-250%, -200%); /* way off to the right */
+    }
+    to {
+      opacity: 1;
+      transform: translate(-550%, -210%) rotate(-25deg); /* land top-left */
+    }
+  }
+
+  @keyframes fade-in-top-left-2 {
+    from {
+      opacity: 0;
+      transform: translate(-70%, -70%); /* way off to the right */
+    }
+    to {
+      opacity: 1;
+      transform: translate(-80%, -210%); /* land top-left */
+    }
+  }
+
+  /* Start far right (off-screen), end at top-right */
+  @keyframes fade-in-top-right {
+    from {
+      opacity: 0;
+      transform: translate(250%, -250%);
+    }
+    to {
+      opacity: 1;
+      transform: translate(450%, -450%) rotate(25deg);
+    }
+  }
+
+  /* Start far right (off-screen), end at bottom-left */
+  @keyframes fade-in-bottom-left {
+    from {
+      opacity: 0;
+      transform: translate(-100%, 150%);
+    }
+    to {
+      opacity: 1;
+      transform: translate(-130%, 260%); /* land bottom-left */
+    }
+  }
+
+  /* Start far right (off-screen), end at bottom-right */
+  @keyframes fade-in-bottom-right {
+    from {
+      opacity: 0;
+      transform: translate(50%, 50%);
+    }
+    to {
+      opacity: 1;
+      transform: translate(120%, 70%); /* land bottom-right */
+    }
+  }
+  @keyframes fade-in-bottom-right-2 {
+    from {
+      opacity: 0;
+      transform: translate(150%, 350%);
+    }
+    to {
+      opacity: 1;
+      transform: translate(240%, 590%) rotate(35deg); /* land bottom-right */
+    }
+  }
+
+  @keyframes gradient-shift {
+    0%,
+    100% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+  }
+
+  @keyframes fade-in-top-left-responsive {
+    from {
+      opacity: 0;
+      transform: translate(-175%, -140%);
+    }
+    to {
+      opacity: 1;
+      transform: translate(-385%, -147%) rotate(-17deg);
+    }
+  }
+
+  @keyframes fade-in-top-left-2-responsive {
+    from {
+      opacity: 0;
+      transform: translate(-50%, -50%);
+    }
+    to {
+      opacity: 1;
+      transform: translate(-50%, -154%);
+    }
+  }
+
+  @keyframes fade-in-top-right-responsive {
+    from {
+      opacity: 0;
+      transform: translate(175%, -175%);
+    }
+    to {
+      opacity: 1;
+      transform: translate(315%, -315%) rotate(17deg);
+    }
+  }
+
+  @keyframes fade-in-bottom-left-responsive {
+    from {
+      opacity: 0;
+      transform: translate(-70%, 105%);
+    }
+    to {
+      opacity: 1;
+      transform: translate(-91%, 182%);
+    }
+  }
+
+  @keyframes fade-in-bottom-right-responsive {
+    from {
+      opacity: 0;
+      transform: translate(35%, 35%);
+    }
+    to {
+      opacity: 1;
+      transform: translate(84%, 49%);
+    }
+  }
+
+  @keyframes fade-in-bottom-right-2-responsive {
+    from {
+      opacity: 0;
+      transform: translate(105%, 245%);
+    }
+    to {
+      opacity: 1;
+      transform: translate(168%, 413%) rotate(24deg);
+    }
+  }
+}
+
+@layer base {
+  :root {
+    --background: #f5f5f5;
+    --foreground: #191a15;
+
+    --primary: #54bd95;
+    --primary-foreground: #ffffff;
+
+    --muted: #54be96;
+    --muted-foreground: #ffffff;
+
+    --brand: #a6a6a6;
+    --black: #000000;
+  }
+
+  .dark {
+    --background: #0e0f0c;
+    --foreground: #f5f5f5;
+
+    --primary: #54bd95;
+    --primary-foreground: #ffffff;
+
+    --muted: #3d7f66;
+    --muted-foreground: #e6f4ed;
+
+    --brand: #7a7a7a;
+    --black: #000000;
+  }
+
+  html {
+    @apply scroll-smooth;
+  }
+
+  body {
+    @apply bg-background text-foreground transition-colors duration-300;
+    font-feature-settings: "rlig" 1, "calt" 1;
+  }
+}
+
+@utility button-no {
+  @apply text-foreground py-2 px-3 rounded-lg 
+           hover:bg-primary hover:text-primary-foreground
+           transition-colors duration-200;
+}
+
+@utility button-gr {
+  @apply bg-primary text-primary-foreground rounded-lg py-2 px-3 
+           shadow hover:bg-transparent hover:text-primary hover:outline
+           transition-colors duration-200;
+}
+
+@utility shadow-primary {
+  @apply rounded-lg transition-transform duration-500 hover:scale-102 hover:shadow-[0_4px_6px_rgba(84,189,149,0.5)];
+}
