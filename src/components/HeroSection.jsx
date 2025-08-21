@@ -12,7 +12,7 @@ import {
 
 export const HeroSection = () => {
   return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden px-5 py-2">
+    <section className="relative min-h-screen flex items-center justify-center px-5 py-2">
       {/* Container */}
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 lg:gap-12 w-full max-w-6xl px-12 items-center mx-auto">
         {/* Left Side */}

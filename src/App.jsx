@@ -5,6 +5,7 @@ import { NotFound } from "./pages/NotFound";
 import { Navbar } from "./components/Navbar";
 import './index.css';
 import { BackgroundEffect } from "./components/BackgroundEffect";
+import { Footer } from "./components/Footer";
 
 function App() {
   return (
@@ -15,6 +16,7 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="*" element={<NotFound />} />
       </Routes>
+      <Footer/>
     </BrowserRouter>
   );
 }
