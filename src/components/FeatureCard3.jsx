@@ -6,7 +6,7 @@ export const FeatureCard3 = () => {
     <div className="mb-5">
       <div className="flex flex-col justify-center gap-8 p-6 rounded-2xl h-[85vh]">
         {/* shapes */}
-        <div className="space-y-7 bg-primary/10 p-3 rounded-xl h-[90%] relative">
+        <div className="space-y-7 bg-primary/10 p-3 rounded-xl h-[90%] md:h-[90%] relative">
           {/* Arrow*/}
           <Gauge />
           <Compass size={60} className="p-3 absolute top-0 right-0 m-9 rounded-xl bg-filler text-shape -rotate-12 shadow-primary"/>

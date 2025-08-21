@@ -20,8 +20,8 @@ export const Signup = () => {
   };
 
   return (
-    <section className="min-h-screen flex items-center justify-center p-20 md:px-5 md:py-10">
-      <div className="max-w-md w-full bg-white/90 backdrop-blur-md rounded-2xl p-20 md:p-8 shadow-lg">
+    <section className="min-h-screen flex items-center justify-center p-4 md:px-5 md:py-10">
+      <div className="max-w-md w-full bg-white/90 backdrop-blur-md rounded-2xl p-4 md:p-8 shadow-lg">
         <h1 className="text-4xl font-bold text-black text-center mb-6">
           Create Account
         </h1>

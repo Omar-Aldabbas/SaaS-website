@@ -54,103 +54,26 @@
 
   --animate-fade-in: fade-in 0.5s ease-in-out;
 
-  --animate-fade-in-top-left: fade-in-top-left 0.8s ease-out forwards;
-  --animate-fade-in-top-left-2: fade-in-top-left-2 0.8s ease-out forwards;
-  --animate-fade-in-top-right: fade-in-top-right 0.8s ease-out forwards;
-  --animate-fade-in-bottom-left: fade-in-bottom-left 0.8s ease-out forwards;
-  --animate-fade-in-bottom-right: fade-in-bottom-right 0.8s ease-out forwards;
-  --animate-fade-in-bottom-right-2: fade-in-bottom-right-2 0.8s ease-out
-    forwards;
-
-  --animate-fade-in-top-left-responsive: fade-in-top-left-responsive 0.8s
-    ease-out forwards;
-  --animate-fade-in-top-left-2-responsive: fade-in-top-left-2-responsive 0.8s
-    ease-out forwards;
-  --animate-fade-in-top-right-responsive: fade-in-top-right-responsive 0.8s
-    ease-out forwards;
-  --animate-fade-in-bottom-left-responsive: fade-in-bottom-left-responsive 0.8s
-    ease-out forwards;
-  --animate-fade-in-bottom-right-responsive: fade-in-bottom-right-responsive
-    0.8s ease-out forwards;
-  --animate-fade-in-bottom-right-2-responsive: fade-in-bottom-right-2-responsive
-    0.8s ease-out forwards;
-
   --animate-scroll-x: scroll-x 14s linear infinite;
 
-    @keyframes fade-in {
+  @keyframes fade-in {
     from {
       opacity: 0;
       transform: translate(10%, 10%) rotate(-5deg);
     }
     to {
       opacity: 1;
-      transform: translate(0, 0) ;
+      transform: translate(0, 0);
     }
   }
 
 
-  @keyframes fade-in-top-left {
-    from {
-      opacity: 0;
-      transform: translate(-250%, -200%);
+  @keyframes scroll-x {
+    0% {
+      transform: translateX(0);
     }
-    to {
-      opacity: 1;
-      transform: translate(-550%, -210%) rotate(-25deg);
-    }
-  }
-
-  @keyframes fade-in-top-left-2 {
-    from {
-      opacity: 0;
-      transform: translate(-70%, -70%);
-    }
-    to {
-      opacity: 1;
-      transform: translate(-80%, -210%);
-    }
-  }
-
-  @keyframes fade-in-top-right {
-    from {
-      opacity: 0;
-      transform: translate(250%, -250%);
-    }
-    to {
-      opacity: 1;
-      transform: translate(450%, -450%) rotate(25deg);
-    }
-  }
-
-  @keyframes fade-in-bottom-left {
-    from {
-      opacity: 0;
-      transform: translate(-100%, 150%);
-    }
-    to {
-      opacity: 1;
-      transform: translate(-130%, 260%);
-    }
-  }
-
-  @keyframes fade-in-bottom-right {
-    from {
-      opacity: 0;
-      transform: translate(50%, 50%);
-    }
-    to {
-      opacity: 1;
-      transform: translate(120%, 70%);
-    }
-  }
-  @keyframes fade-in-bottom-right-2 {
-    from {
-      opacity: 0;
-      transform: translate(150%, 350%);
-    }
-    to {
-      opacity: 1;
-      transform: translate(240%, 590%) rotate(35deg);
+    100% {
+      transform: translateX(-50%);
     }
   }
 
@@ -161,81 +84,6 @@
     }
     50% {
       background-position: 100% 50%;
-    }
-  }
-
-  @keyframes fade-in-top-left-responsive {
-    from {
-      opacity: 0;
-      transform: translate(-175%, -140%);
-    }
-    to {
-      opacity: 1;
-      transform: translate(-385%, -147%) rotate(-17deg);
-    }
-  }
-
-  @keyframes fade-in-top-left-2-responsive {
-    from {
-      opacity: 0;
-      transform: translate(-50%, -50%);
-    }
-    to {
-      opacity: 1;
-      transform: translate(-50%, -154%);
-    }
-  }
-
-  @keyframes fade-in-top-right-responsive {
-    from {
-      opacity: 0;
-      transform: translate(175%, -175%);
-    }
-    to {
-      opacity: 1;
-      transform: translate(315%, -315%) rotate(17deg);
-    }
-  }
-
-  @keyframes fade-in-bottom-left-responsive {
-    from {
-      opacity: 0;
-      transform: translate(-70%, 105%);
-    }
-    to {
-      opacity: 1;
-      transform: translate(-91%, 182%);
-    }
-  }
-
-  @keyframes fade-in-bottom-right-responsive {
-    from {
-      opacity: 0;
-      transform: translate(35%, 35%);
-    }
-    to {
-      opacity: 1;
-      transform: translate(84%, 49%);
-    }
-  }
-
-  @keyframes fade-in-bottom-right-2-responsive {
-    from {
-      opacity: 0;
-      transform: translate(105%, 245%);
-    }
-    to {
-      opacity: 1;
-      transform: translate(168%, 413%) rotate(24deg);
-    }
-  }
-
-  @keyframes scroll-x {
-    0% {
-      transform: translateX(0);
-    }
-    100% {
-      transform: translateX(-50%);
     }
   }
 }
@@ -254,13 +102,11 @@
     --shape: #0f8ce9;
     --filler: #f6fa26;
 
-
     --brand: #a6a6a6;
     --black: #000000;
 
-    --secondary: #161C28;
+    --secondary: #161c28;
     --secondary-foreground: #222938;
-
   }
 
   .dark {
@@ -309,8 +155,6 @@
   @apply rounded-lg transition-transform duration-500 hover:scale-102 hover:shadow-[0_4px_6px_rgba(84,189,149,0.5)];
 }
 
-
-
 @layer utilities {
   .no-scrollbar::-webkit-scrollbar {
     display: none;
@@ -318,6 +162,6 @@
 
   .no-scrollbar {
     -ms-overflow-style: none;
-    scrollbar-width: none;    
+    scrollbar-width: none;
   }
 }

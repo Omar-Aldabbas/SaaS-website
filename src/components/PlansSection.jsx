@@ -20,7 +20,7 @@ export const PlansSection = () => {
           </div>
         </div>
         <div
-          className="mt-10 flex overflow-x-auto snap-x snap-mandatory no-scrollbar p-2 gap-6 w-full md:grid md:grid-cols-3 md:gap-6 md:overflow-visible"
+         className="mt-10 flex flex-col gap-6 w-full md:grid md:grid-cols-3 md:gap-6 md:overflow-visible"
         >
           <Plans />
         </div>

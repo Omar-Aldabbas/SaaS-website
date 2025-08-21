@@ -35,11 +35,11 @@ export const BenifitSection = () => {
         </div>
       </div>
 
-      <div className="flex justify-center items-center relative">
+      <div className="flex justify-center items-center relative w-full">
         <img
           src={Desk}
           alt="Desk and laptop"
-          className=" max-w-md lg:max-w-lg h-auto"
+          className=" max-w-md lg:max-w-lg h-auto p-1"
         />
 
         <div
@@ -47,7 +47,7 @@ export const BenifitSection = () => {
           className={cn(
             "absolute  bg-white/90 p-2 rounded-xl shadow-lg transition-all duration-900",
             isVisible
-              ? "opacity-100 top-1/8 -left-1/8 md:-left-1/3"
+              ? "opacity-100 top-1/8 -left-1/20 md:-left-1/10"
               : "opacity-0"
           )}
         >
@@ -69,8 +69,8 @@ export const BenifitSection = () => {
           className={cn(
             "absolute opacity-0 rounded-lg bg-white p-3 flex gap-3 transition-all duration-900",
             isVisible
-              ? "  lg:animate-fade-in-bottom-left animate-fade-in-bottom-left-responsive"
-              : ""
+              ? "opacity-100 top-3/4 left-1/8"
+              : "opacity-0"
           )}
         >
           <div className="flex flex-col gap-2">
@@ -84,8 +84,8 @@ export const BenifitSection = () => {
           <div
             ref={ref}
             className={cn(
-              "relative  bg-white/90 p-2 rounded-xl shadow-lg transition-all duration-900 flex gap-3 items-center ",
-              isVisible ? "opacity-100 left-2/4 md:left-3/8" : "opacity-0"
+              "relative  bg-white/90 p-2 rounded-xl shadow-lg transition-all duration-900 flex gap-3 items-center",
+              isVisible ? "opacity-100 left-2/8 md:left-3/8" : "opacity-0"
             )}
           >
             <CheckCircle2 size={40} className="text-black p-2" />
@@ -98,7 +98,7 @@ export const BenifitSection = () => {
               "text-background bg-shape p-2 shadow-primary absolute ",
               "transition-all duration-900",
               isVisible
-                ? "-left-2/4 md:-left-5/8 -rotate-45 opacity-100"
+                ? "-left-1/4 md:-left-5/8 -rotate-45 opacity-100"
                 : "opacity-0"
             )}
           />
