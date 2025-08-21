@@ -14,7 +14,7 @@ import { Signup } from "./pages/Signup";
 
 function App() {
   return (
-    <BrowserRouter basename={process.env.PUBLIC_URL}>
+    <BrowserRouter basename={import.meta.env.BASE_URL}>
       <BackgroundEffect />
       <Navbar /> 
       <Routes>
