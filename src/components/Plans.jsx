@@ -51,15 +51,17 @@ export const Plans = () => {
   const [active, setActive] = useState(2);
 
   return (
-    <div className="flex flex-col md:flex-row gap-6 justify-center items-stretch p-3 mt-10">
+    <>
       {cards.map((card) => (
         <div
           key={card.id}
           onClick={() => setActive(card.id)}
           className={cn(
-            "cursor-pointer flex flex-col justify-between p-5 rounded-2xl shadow-md transition-all duration-300 flex-1 min-h-[420px] md:min-h-[500px] max-w-sm mx-auto",
+            "snap-center shrink-0 w-[65%] md:w-[380px] " +
+              "cursor-pointer flex flex-col justify-between p-5 rounded-2xl shadow-md transition-all duration-300 " +
+              "min-h-[80vh] md:min-h-[500px] mx-auto",
             active === card.id
-              ? "bg-gradient-to-t from-brand to-primary/90 scale-105"
+              ? "bg-gradient-to-t from-brand to-primary/90  md:scale-108"
               : "shadow-primary"
           )}
         >
@@ -114,6 +116,7 @@ export const Plans = () => {
           </div>
         </div>
       ))}
-    </div>
+    </>
   );
 };
+

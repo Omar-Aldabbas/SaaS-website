@@ -11,7 +11,7 @@ const companiesData = [
 
 export const ProductsSection = () => {
   return (
-    <section className="mx-auto px-14 flex items-center m-6">
+    <section id="product" className="mx-auto px-14 flex items-center m-6">
       <div className="grid grid-cols-1 lg:grid-cols-2 mx-auto p-4 g-6 min-h-screen justify-center items-center">
         {/* Left */}
         <div className="flex flex-col gap-8">

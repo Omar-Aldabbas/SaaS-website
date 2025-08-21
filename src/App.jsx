@@ -6,14 +6,23 @@ import { Navbar } from "./components/Navbar";
 import './index.css';
 import { BackgroundEffect } from "./components/BackgroundEffect";
 import { Footer } from "./components/Footer";
+import { Blog } from "./pages/Blog";
+import { About } from "./pages/About";
+import { FAQ } from "./pages/FAQ";
+import { Signup } from "./pages/Signup";
+
 
 function App() {
   return (
-    <BrowserRouter>
+    <BrowserRouter basename={process.env.PUBLIC_URL}>
       <BackgroundEffect />
-      <Navbar /> {/* Global Navbar */}
+      <Navbar /> 
       <Routes>
         <Route path="/" element={<Home />} />
+        <Route path="/blog" element={<Blog/>}/>
+        <Route path="/about" element={<About/>}/>
+        <Route path="/faq" element={<FAQ/>}/>
+        <Route path="/signup" element={<Signup/>}/>
         <Route path="*" element={<NotFound />} />
       </Routes>
       <Footer/>

@@ -9,13 +9,14 @@ import {
   MessageSquare,
   PlayCircle,
 } from "lucide-react";
+import { useInView } from "../hooks/useInView";
 
 export const HeroSection = () => {
+  const [heroRef, heroVisible] = useInView({ threshold: 0.2 });
+
   return (
     <section className="relative min-h-screen flex items-center justify-center px-5 py-2">
-      {/* Container */}
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 lg:gap-12 w-full max-w-6xl px-12 items-center mx-auto">
-        {/* Left Side */}
         <div className="flex flex-col gap-6 justify-center">
           <h1 className="text-6xl md:text-6xl font-bold text-foreground leading-tight">
             We’re here to Increase your Productivity
@@ -40,43 +41,69 @@ export const HeroSection = () => {
           </div>
         </div>
 
-        {/* Right Side */}
-        <div className="relative flex justify-center items-center px-14 md:px-0">
+        <div
+          ref={heroRef}
+          className="relative flex justify-center items-center px-14 md:px-0"
+        >
           <img
             src={Hero}
             alt="Man picture"
             className="w-[90%] max-w-md h-auto rounded-lg"
           />
 
-          {/* Floating Icons */}
           <Database
-            className="absolute animate-fade-in-top-right-responsive lg:animate-fade-in-top-right bg-filler p-3 rounded-lg shadow-primary "
+            className={cn(
+              "absolute bg-filler p-3 rounded-lg transition-transform duration-700",
+              heroVisible
+                ? "animate-fade-in-top-right-responsive lg:animate-fade-in-top-right"
+                : "opacity-0 translate-x-10 translate-y-10"
+            )}
             size={50}
           />
           <Check
-            className="absolute animate-fade-in-top-left-responsive lg:animate-fade-in-top-left bg-shape p-3 rounded-lg shadow-primary"
+            className={cn(
+              "absolute bg-shape p-3 rounded-lg transition-transform duration-700",
+              heroVisible
+                ? "animate-fade-in-top-left-responsive lg:animate-fade-in-top-left"
+                : "opacity-0 -translate-x-10 -translate-y-10"
+            )}
             size={50}
           />
           <MessageSquare
-            className="absolute animate-fade-in-bottom-right-2-responsive lg:animate-fade-in-bottom-right-2 bg-pink-400 p-3 rounded-lg shadow-primary"
+            className={cn(
+              "absolute bg-pink-400 p-3 rounded-lg transition-transform duration-700",
+              heroVisible
+                ? "animate-fade-in-bottom-right-2-responsive lg:animate-fade-in-bottom-right-2"
+                : "opacity-0 translate-x-10 translate-y-10"
+            )}
             size={50}
           />
-          {/* Credit Image */}
+
           <img
             src={Creadit}
             alt="Credit"
-            className="absolute animate-fade-in-bottom-right-responsive lg:animate-fade-in-bottom-right hover:scale-105 transition-all duration-400"
+            className={cn(
+              "absolute transition-transform duration-700 hover:scale-105",
+              heroVisible
+                ? "animate-fade-in-bottom-right-responsive lg:animate-fade-in-bottom-right"
+                : "opacity-0 translate-x-5 translate-y-5"
+            )}
           />
-          <div className="hidden lg:block absolute rounded-lg bg-white animate-fade-in-top-left-2-responsive lg:animate-fade-in-top-left-2 max-w-[60%] p-2">
-            <form
-              action=""
-              className="flex flex-row p-2 justify-center items-center"
-            >
+
+          <div
+            className={cn(
+              "hidden lg:block absolute rounded-lg bg-white max-w-[60%] p-2 transition-opacity duration-700",
+              heroVisible
+                ? "animate-fade-in-top-left-2-responsive lg:animate-fade-in-top-left-2 opacity-100"
+                : "opacity-0"
+            )}
+          >
+            <form className="flex flex-row p-2 justify-center items-center">
               <div className="flex flex-col gap-2">
-                <label className="text-brand text-md ">Enter Amount</label>
+                <label className="text-brand text-md">Enter Amount</label>
                 <input
                   type="text"
-                  className="text-black focus:outline-none focus:ring-0 text-lg font-semibold placeholder-black placeholder:font-semibold "
+                  className="text-black focus:outline-none focus:ring-0 text-lg font-semibold placeholder-black placeholder:font-semibold"
                   placeholder="$450..00"
                 />
                 <div className="w-[120%] bg-brand h-0.5 rounded-full"></div>
@@ -85,9 +112,16 @@ export const HeroSection = () => {
             </form>
           </div>
 
-          <div className="absolute rounded-lg bg-white p-3 flex gap-3 animate-fade-in-bottom-left-responsive lg:animate-fade-in-bottom-left">
+          <div
+            className={cn(
+              "absolute rounded-lg bg-white p-3 flex gap-3 transition-opacity duration-700",
+              heroVisible
+                ? "animate-fade-in-bottom-left-responsive lg:animate-fade-in-bottom-left opacity-100"
+                : "opacity-0"
+            )}
+          >
             <div className="flex flex-col gap-2">
-              <p className="text-brand text-md ">Total income</p>
+              <p className="text-brand text-md">Total income</p>
               <p className="text-black text-md font-semibold">243.50</p>
             </div>
             <KanbanSquareDashedIcon className="text-primary p-2" size={50} />

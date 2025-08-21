@@ -308,3 +308,16 @@
 @utility shadow-primary {
   @apply rounded-lg transition-transform duration-500 hover:scale-102 hover:shadow-[0_4px_6px_rgba(84,189,149,0.5)];
 }
+
+
+
+@layer utilities {
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+
+  .no-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;    
+  }
+}
