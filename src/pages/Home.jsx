@@ -1,5 +1,8 @@
+import { BenifitSection } from "../components/BenifitSection";
 import { CollabsSection } from "../components/CollabsSection";
+import { FeaturesSection } from "../components/FeaturesSection";
 import { HeroSection } from "../components/HeroSection";
+import { PlansSection } from "../components/PlansSection";
 import { ProductsSection } from "../components/ProductsSection";
 
 export const Home = () => {
@@ -8,6 +11,9 @@ export const Home = () => {
       <HeroSection />
       <CollabsSection />
       <ProductsSection />
+      <FeaturesSection />
+      <BenifitSection />
+      <PlansSection />
     </div>
   );
 };

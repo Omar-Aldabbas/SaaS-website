@@ -8,11 +8,11 @@ const getStars = (rank, total = 5) => {
   return (
     <div className="flex items-center gap-1">
       {Array.from({ length: fullStars }).map((_, i) => (
-        <StarIcon key={`full-${i}`} size={25} className="text-yellow-400" />
+        <StarIcon key={`full-${i}`} size={25} className="text-filler"  fill="currentColor"/>
       ))}
 
       {Array.from({ length: emptyStars }).map((_, i) => (
-        <StarIcon key={`empty-${i}`} size={25} className="text-brand" />
+        <StarIcon key={`empty-${i}`} size={25} className="text-brand" fill="currentColor" />
       ))}
     </div>
   );

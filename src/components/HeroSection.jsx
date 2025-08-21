@@ -50,11 +50,11 @@ export const HeroSection = () => {
 
           {/* Floating Icons */}
           <Database
-            className="absolute animate-fade-in-top-right-responsive lg:animate-fade-in-top-right bg-yellow-500 p-3 rounded-lg shadow-primary "
+            className="absolute animate-fade-in-top-right-responsive lg:animate-fade-in-top-right bg-filler p-3 rounded-lg shadow-primary "
             size={50}
           />
           <Check
-            className="absolute animate-fade-in-top-left-responsive lg:animate-fade-in-top-left bg-blue-700 p-3 rounded-lg shadow-primary"
+            className="absolute animate-fade-in-top-left-responsive lg:animate-fade-in-top-left bg-shape p-3 rounded-lg shadow-primary"
             size={50}
           />
           <MessageSquare
@@ -87,7 +87,7 @@ export const HeroSection = () => {
 
           <div className="absolute rounded-lg bg-white p-3 flex gap-3 animate-fade-in-bottom-left-responsive lg:animate-fade-in-bottom-left">
             <div className="flex flex-col gap-2">
-              <p className="text-brand text-md ">Enter Amount</p>
+              <p className="text-brand text-md ">Total income</p>
               <p className="text-black text-md font-semibold">243.50</p>
             </div>
             <KanbanSquareDashedIcon className="text-primary p-2" size={50} />

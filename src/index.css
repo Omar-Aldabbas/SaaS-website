@@ -44,6 +44,9 @@
   --color-brand: var(--brand);
   --color-black: var(--black);
 
+  --color-shape: var(--shape);
+  --color-filler: var(--filler);
+
   --animate-gradient-shift: gradient-shift 10s ease infinite;
 
   --animate-fade-in: fade-in 0.5s ease-in-out;
@@ -71,11 +74,22 @@
 
   --animate-scroll-x: scroll-x 14s linear infinite;
 
+    @keyframes fade-in {
+    from {
+      opacity: 0;
+      transform: translate(10%, 10%) rotate(-5deg);
+    }
+    to {
+      opacity: 1;
+      transform: translate(0, 0) ;
+    }
+  }
+
 
   @keyframes fade-in-top-left {
     from {
       opacity: 0;
-      transform: translate(-250%, -200%); 
+      transform: translate(-250%, -200%);
     }
     to {
       opacity: 1;
@@ -86,14 +100,13 @@
   @keyframes fade-in-top-left-2 {
     from {
       opacity: 0;
-      transform: translate(-70%, -70%); 
+      transform: translate(-70%, -70%);
     }
     to {
       opacity: 1;
       transform: translate(-80%, -210%);
     }
   }
-
 
   @keyframes fade-in-top-right {
     from {
@@ -106,7 +119,6 @@
     }
   }
 
-
   @keyframes fade-in-bottom-left {
     from {
       opacity: 0;
@@ -118,7 +130,6 @@
     }
   }
 
- 
   @keyframes fade-in-bottom-right {
     from {
       opacity: 0;
@@ -136,7 +147,7 @@
     }
     to {
       opacity: 1;
-      transform: translate(240%, 590%) rotate(35deg); 
+      transform: translate(240%, 590%) rotate(35deg);
     }
   }
 
@@ -237,6 +248,10 @@
     --muted: #54be96;
     --muted-foreground: #ffffff;
 
+    --shape: #0f8ce9;
+    --filler: #f6fa26;
+
+
     --brand: #a6a6a6;
     --black: #000000;
   }
@@ -250,6 +265,9 @@
 
     --muted: #3d7f66;
     --muted-foreground: #e6f4ed;
+
+    --shape: #6d0fe9;
+    --filler: #e5e912;
 
     --brand: #7a7a7a;
     --black: #000000;
