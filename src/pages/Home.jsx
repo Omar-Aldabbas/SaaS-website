@@ -1,5 +1,6 @@
 import { BenifitSection } from "../components/BenifitSection";
 import { CollabsSection } from "../components/CollabsSection";
+import { Contact } from "../components/Contact";
 import { FeaturesSection } from "../components/FeaturesSection";
 import { HeroSection } from "../components/HeroSection";
 import { PlansSection } from "../components/PlansSection";
@@ -14,6 +15,7 @@ export const Home = () => {
       <FeaturesSection />
       <BenifitSection />
       <PlansSection />
+      <Contact/>
     </div>
   );
 };
